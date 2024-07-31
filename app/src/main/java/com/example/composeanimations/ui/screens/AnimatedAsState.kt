@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.Recomposer
 import androidx.compose.runtime.State
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -56,15 +55,19 @@ internal fun AnimatedAsStateScreen(modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun AnimatedSquare(color: State<Color>, size: State<Dp>, rotation: State<Float>, modifier: Modifier = Modifier) {
+private fun AnimatedSquare(
+    color: State<Color>,
+    size: State<Dp>,
+    rotation: State<Float>,
+    modifier: Modifier = Modifier
+) {
     Box(
         modifier = modifier
             .size(size.value)
-            .background(color.value)
             .graphicsLayer {
                 rotationX = rotation.value
                 rotationY = rotation.value
-                rotationY = rotation.value
             }
+            .background(color.value)
     )
 }

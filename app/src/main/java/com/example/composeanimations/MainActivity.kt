@@ -12,9 +12,14 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.composeanimations.ui.routes.Routes
+import com.example.composeanimations.ui.screens.Animatable
 import com.example.composeanimations.ui.screens.AnimatedAsStateScreen
 import com.example.composeanimations.ui.screens.AnimatedContentScreen
 import com.example.composeanimations.ui.screens.AnimatedVisibilityScreen
+import com.example.composeanimations.ui.screens.Animation
+import com.example.composeanimations.ui.screens.AnimationSpecSpring
+import com.example.composeanimations.ui.screens.AnimationSpecTween
+import com.example.composeanimations.ui.screens.CanvasAnimationDot
 import com.example.composeanimations.ui.screens.CanvasAnimationScreen
 import com.example.composeanimations.ui.screens.MainScreen
 import com.example.composeanimations.ui.screens.TransitionsExampleScreen
@@ -57,6 +62,21 @@ class MainActivity : ComponentActivity() {
                                 },
                                 openCanvasAnimationScreen = {
                                     navController.navigate(Routes.CanvasAnimation.name)
+                                },
+                                openCanvasAnimationDotScreen = {
+                                    navController.navigate(Routes.CanvasAnimationDot.name)
+                                },
+                                openAnimationSpecTween = {
+                                    navController.navigate(Routes.AnimationSpecTween.name)
+                                },
+                                openAnimationSpecSpring = {
+                                    navController.navigate(Routes.AnimationSpecSpring.name)
+                                },
+                                openAnimatable = {
+                                    navController.navigate(Routes.Animatable.name)
+                                },
+                                openAnimation = {
+                                    navController.navigate(Routes.Animation.name)
                                 }
                             )
                         }
@@ -72,11 +92,26 @@ class MainActivity : ComponentActivity() {
                         composable(Routes.AnimateAsState.name) {
                             AnimatedAsStateScreen()
                         }
-                        composable(Routes.TransitionExample.name) {
+                        composable(Routes.UpdateTransition.name) {
                             UpdateTransitionScreen()
                         }
                         composable(Routes.CanvasAnimation.name) {
                             CanvasAnimationScreen()
+                        }
+                        composable(Routes.CanvasAnimationDot.name) {
+                            CanvasAnimationDot()
+                        }
+                        composable(Routes.AnimationSpecTween.name) {
+                            AnimationSpecTween()
+                        }
+                        composable(Routes.AnimationSpecSpring.name) {
+                            AnimationSpecSpring()
+                        }
+                        composable(Routes.Animatable.name) {
+                            Animatable()
+                        }
+                        composable(Routes.Animation.name) {
+                            Animation()
                         }
                     }
                 }

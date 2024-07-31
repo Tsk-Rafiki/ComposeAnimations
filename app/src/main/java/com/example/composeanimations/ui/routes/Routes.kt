@@ -7,5 +7,10 @@ internal enum class Routes {
     AnimatedContent,
     AnimateAsState,
     UpdateTransition,
-    CanvasAnimation
+    CanvasAnimation,
+    CanvasAnimationDot,
+    AnimationSpecTween,
+    AnimationSpecSpring,
+    Animatable,
+    Animation,
 }

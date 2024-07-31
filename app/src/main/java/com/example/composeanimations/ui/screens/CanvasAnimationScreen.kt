@@ -39,7 +39,7 @@ internal fun CanvasAnimationScreen(modifier: Modifier = Modifier) {
     val dotSize = 16.dp
     val dotSizePx = with(LocalDensity.current) { dotSize.toPx() }
     Box(
-        modifier = Modifier.fillMaxSize()
+        modifier = modifier.fillMaxSize()
     ) {
         Dot(dotSize, firstPointOffset)
         Dot(dotSize, secondPointOffset)
@@ -104,7 +104,11 @@ private fun Line(
         drawPath(path = path, color = Color.Black, style = Stroke(width = 5f))
         drawLine(Color.Red, offsetDotA.getDotCenterOffset(), midAnimatedPointOffset.value)
         drawLine(Color.Red, midAnimatedPointOffset.value, offsetDotB.getDotCenterOffset())
-        drawCircle(color = Color.Red, radius = 10f, center = Offset(midAnimatedPointOffset.value.x, midAnimatedPointOffset.value.y))
+        drawCircle(
+            color = Color.Red,
+            radius = 10f,
+            center = Offset(midAnimatedPointOffset.value.x, midAnimatedPointOffset.value.y)
+        )
     }
 
 }

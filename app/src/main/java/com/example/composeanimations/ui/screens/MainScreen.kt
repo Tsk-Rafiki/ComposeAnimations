@@ -20,9 +20,16 @@ fun MainScreen(
     openAnimationAsStateScreen: () -> Unit,
     openUpdateTransitionScreen: () -> Unit,
     openCanvasAnimationScreen: () -> Unit,
+    openCanvasAnimationDotScreen: () -> Unit,
+    openAnimationSpecTween: () -> Unit,
+    openAnimationSpecSpring: () -> Unit,
+    openAnimatable: () -> Unit,
+    openAnimation: () -> Unit,
 ) {
     Column(
-        modifier = modifier.padding(top = 48.dp).fillMaxWidth(),
+        modifier = modifier
+            .padding(top = 48.dp)
+            .fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         AnimationItem("Transition Examples") { openTransitionExamplesScreen() }
@@ -31,6 +38,11 @@ fun MainScreen(
         AnimationItem("AnimatedAsState") { openAnimationAsStateScreen() }
         AnimationItem("UpdateTransition") { openUpdateTransitionScreen() }
         AnimationItem("CanvasAnimation") { openCanvasAnimationScreen() }
+        AnimationItem("CanvasAnimationDot") { openCanvasAnimationDotScreen() }
+        AnimationItem("AnimationSpecTween") { openAnimationSpecTween() }
+        AnimationItem("AnimationSpecSpring") { openAnimationSpecSpring() }
+        AnimationItem("Animatable") { openAnimatable() }
+        AnimationItem("Animation") { openAnimation() }
     }
 }
 
@@ -38,6 +50,8 @@ fun MainScreen(
 private fun AnimationItem(title: String, modifier: Modifier = Modifier, onClick: () -> Unit) {
     Text(
         text = title,
-        modifier = modifier.defaultMinSize(minHeight = 36.dp).clickable { onClick() },
+        modifier = modifier
+            .defaultMinSize(minHeight = 36.dp)
+            .clickable { onClick() },
     )
 }

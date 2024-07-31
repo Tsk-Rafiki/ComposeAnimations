@@ -78,7 +78,7 @@ private fun EnterTransitionView(item: TransitionExample) {
         Spacer(modifier = Modifier.height(4.dp))
         Box(
             modifier = Modifier
-                .size(128.dp)
+                .size(112.dp)
                 .border(BorderStroke(1.dp, Color.Black), MaterialTheme.shapes.medium)
                 .clickable {
                     isVisible = !isVisible
@@ -119,4 +119,5 @@ private fun listOfTransition(): List<TransitionExample> = buildList {
     add(TransitionExample("expandIn\nshrinkOut", expandIn(), shrinkOut()))
     add(TransitionExample("expandHorizontally\nshrinkHorizontally", expandHorizontally(), shrinkHorizontally()))
     add(TransitionExample("scaleIn\nscaleOut", scaleIn(), scaleOut()))
+    add(TransitionExample("scaleIn + fadeIn\nscaleOut + fadeOut", scaleIn() + fadeIn(), scaleOut() + fadeOut()))
 }
